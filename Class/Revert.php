@@ -17,6 +17,10 @@ class Revert
     private function revertWord($word)
     {
         $arr = str_split($word);
+        if (count($arr) === 1)
+        {
+            return $word;
+        }
         $arrRev = str_split(mb_strtolower(preg_replace('/\pP/iu', '', $word)));
         $count = count($arrRev) - 1;
 
